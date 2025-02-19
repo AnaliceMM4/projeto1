@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+h2 {
+    color: var(--white);
+    font-size: 2.3rem;
+    margin: 1rem;
+    padding: 1rem;
+    font-family: "JejuHallasa";  
+  }

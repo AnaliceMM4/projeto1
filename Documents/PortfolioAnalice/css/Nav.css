@@ -1,0 +1,157 @@
+@import url(https://fonts.googleapis.com/?family=Lato);
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&family=Poppins&family=Roboto:wght@300&display=swap");
+
+:root {
+  --grey: #c0c0c0;
+  --white: #fdfdfd;
+  /* 95a5a6 */
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* padding-right: 1rem; */
+  /* background: #1a1919; */
+  /* background: #4cb69b; */
+  background: #131614;
+  /* BLack 0c0e0d */
+  /*     background: #242424; */
+  /* background: #3a3e42; */
+  /*  */
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  /* margin: 2rem; */
+  /* padding: 1rem; */
+  align-items: start;
+  list-style-type: none;
+}
+
+.logoBranco {
+  margin: .7rem;
+  width: 5rem;
+  height: 4.5rem;
+}
+
+.page {
+  position: relative;
+  display: block;
+  /* padding: .5rem 0; */
+  margin: 1.3rem;
+  font-size: 1.4rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* font-family: "JejuHallasa"; */
+  color: var(--white);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.page::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #a5aaa9;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+
+/* .animation1:hover{
+    color: #17fcca
+} */
+.page:hover {
+  /* color: #06747e; */
+  color: #a5aaa9;
+  /* var(--grey); */
+}
+
+.page:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+/* Estilos para o menu hamburguer */
+.menu-hamburguer {
+  display: none;
+}
+
+.fas.fa-home, .fas.fa-info-circle, .fas.fa-code, .fas.fa-desktop, .fas.fa-mobile-screen-button{
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Exibir o ícone do menu móvel */
+  .fas.fa-home, .fas.fa-info-circle, .fas.fa-code, .fas.fa-desktop,.fas.fa-mobile-screen-button{
+    display: inline-block; /* Alterado de 'block' para 'inline-block' para exibir ao lado do texto */
+    margin-right: .3rem; /* Espaçamento entre o ícone e o texto */
+    color: white; /* Cor do ícone */
+  }
+}
+/* 
+@media only screen and (max-width: 900px) {
+  .menu {
+    display: none;
+  }
+
+  .menu-hamburguer {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    z-index: 9999;
+    cursor: pointer;
+  }
+
+  .menu-hamburguer .hamburguer {
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .menu-hamburguer-content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 60px 0 0;
+    background: #1a1919;
+    list-style: none;
+    text-align: center;
+    overflow-y: scroll;
+    z-index: 9998;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .menu-hamburguer-content.open {
+    transform: translateX(0%);
+  }
+
+  .menu-hamburguer-content li {
+    margin: 20px 0;
+  }
+
+  .menu-hamburguer-content a {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .menu-hamburguer-content a:hover {
+    color: #d8d8d8;
+  }
+} */

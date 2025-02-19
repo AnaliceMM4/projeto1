@@ -1,0 +1,191 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/logoletra.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link href="/src/footer.css" rel="stylesheet" />
+  
+    <title>Analice Moschen | Sobre mim</title>
+</head>
+<body>
+    <div id="roo"></div>
+    
+    <main></main>
+  
+      <footer class="bg-dark text-center text-white">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+          © 2022 por
+          <a class="text-white">Analice Moschen</a>
+        </div>
+       {/* href="https://mdbootstrap.com/"> */}
+     </footer>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sidebar Menu</title>
+  <style>
+    /* Estilos para o sidebar */
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 10px 25px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #f1f1f1;
+    }
+
+    /* Estilos para o botão de menu hambúrguer */
+    .openbtn {
+      font-size: 30px;
+      cursor: pointer;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 999;
+    }
+
+
+    .carousel {
+      width: 300px;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .slide {
+      width: 100px;
+      height: 150px;
+      display: inline-block;
+      margin-right: 10px;
+      background-color: #f0f0f0;
+      text-align: center;
+      line-height: 150px;
+      font-size: 24px;
+      transition: transform 0.3s;
+    }
+
+    /* Define um estilo especial para o slide ativo no centro */
+    .slide.active {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="openbtn" onclick="openNav()">&#9776;</div>
+
+  <div class="sidebar" id="mySidebar">
+    <a href="#">Página 1</a>
+    <a href="#">Página 2</a>
+    <a href="#">Página 3</a>
+    <a href="#">Página 4</a>
+    <a href="#">Página 5</a>
+    <a href="#">Página 6</a>
+  </div>
+
+
+  <div class="carousel">
+    <div class="slide">Slide 1</div>
+    <div class="slide">Slide 2</div>
+    <div class="slide">Slide 3</div>
+    <div class="slide">Slide 4</div>
+  </div>
+
+
+  <script>
+    function openNav() {
+      var sidebar = document.getElementById("mySidebar");
+      if (sidebar.style.left === "0px") {
+        sidebar.style.left = "-250px";
+        document.getElementsByClassName("main")[0].style.marginLeft = "0";
+      } else {
+        sidebar.style.left = "0px";
+        document.getElementsByClassName("main")[0].style.marginLeft = "250px";
+      }
+    }
+
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+    const slide = document.querySelector(".carousel-slide");
+    const images = document.querySelectorAll(".carousel-slide img");
+   // let currentIndex = 0;
+
+    // nextButton.addEventListener("click", () => {
+    //   currentIndex = (currentIndex + 1) % images.length;
+    //   updateSlide();
+    // });
+
+    // prevButton.addEventListener("click", () => {
+    //   currentIndex = (currentIndex - 1 + images.length) % images.length;
+    //   updateSlide();
+    // });
+
+    // function updateSlide() {
+    //   slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+    // }
+
+
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = Math.floor(slides.length / 2); // Começa com o slide do meio
+
+    function updateSlides() {
+      slides.forEach((slide, index) => {
+        if (index === currentIndex) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlides();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlides();
+    }
+
+    // Adicione event listeners aos botões ou outras formas de controle
+    document.getElementById('nextButton').addEventListener('click', nextSlide);
+    document.getElementById('prevButton').addEventListener('click', prevSlide);
+
+    // Chame updateSlides() para definir o slide inicial
+    updateSlides();
+
+
+
+  </script>
+</body>
+
+</html>
